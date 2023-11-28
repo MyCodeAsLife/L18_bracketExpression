@@ -27,12 +27,16 @@ namespace L18_bracketExpression
                     currentDepth++;
 
                     if (currentDepth > maxDepth)
+                    {
                         maxDepth = currentDepth;
+                    }
                 }
                 else if (symbol == closedBracket)
                 {
                     if (currentDepth > 0)
+                    {
                         currentDepth--;
+                    }
                     else
                     {
                         correctAction = false;
