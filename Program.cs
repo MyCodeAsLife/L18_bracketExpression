@@ -40,6 +40,7 @@ namespace L18_bracketExpression
                     }
                 }
             }
+
             if (correctAction && currentDepth == 0)
                 Console.WriteLine($"\nДанное скобочное выражение корректно.\nМаксимальная глубина вложенности составляет {maxDepth}\n");
             else
