@@ -14,7 +14,6 @@ namespace L18_bracketExpression
             int maxDepth = 0;
             char openBracket = '(';
             char closedBracket = ')';
-            bool correctAction = true;
             string userInput;
 
             Console.Write("Введите скобочное выражение: ");
@@ -27,25 +26,18 @@ namespace L18_bracketExpression
                     currentDepth++;
 
                     if (currentDepth > maxDepth)
-                    {
                         maxDepth = currentDepth;
-                    }
                 }
                 else if (symbol == closedBracket)
                 {
-                    if (currentDepth > 0)
-                    {
-                        currentDepth--;
-                    }
-                    else
-                    {
-                        correctAction = false;
+                    currentDepth--;
+
+                    if (currentDepth < 0)
                         break;
-                    }
                 }
             }
 
-            if (correctAction && currentDepth == 0)
+            if (currentDepth == 0)
                 Console.WriteLine($"\nДанное скобочное выражение корректно.\nМаксимальная глубина вложенности составляет {maxDepth}\n");
             else
                 Console.WriteLine($"\nДанное скобочное выражение некорректно.");
